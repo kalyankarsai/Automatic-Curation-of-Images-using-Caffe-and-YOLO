@@ -253,7 +253,10 @@ def start_yolo(filename):
     req_path = "/home/sai/darknet/"
     os.chdir(req_path)
     cmd="./darknet detect cfg/yolo.cfg yolo.weights " + filename
-    subprocess.Popen([cmd],shell=True)
+    p=subprocess.Popen([cmd],shell=True)
+    #print(p)
+    a = p.wait()
+    #print(a)
     
     
 
